@@ -2,18 +2,9 @@
 
 int main(int argc, char *argv[]) {
   if (argc == 1) {
-    cat_no_args();
-  } else {
+    printf("Needs to args");
+  } else if (argc >= 2) {
     cat_args(argc, argv);
-  }
-}
-
-void cat_no_args() {
-  char buf[128];
-  int i = scanf("%s", buf);
-  while (i) {
-    printf("%s\n", buf);
-    i = scanf("%s", buf);
   }
 }
 
