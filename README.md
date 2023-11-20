@@ -46,11 +46,11 @@ Cat is one of the most frequently used commands on Unix-like operating systems. 
 
 More information about using cat, grep you can find here: 
 - cat: https://man7.org/linux/man-pages/man1/cat.1.html
-- 
+- grep: https://man7.org/linux/man-pages/man1/grep.1.html
 
 ### Cat:
 
-- Beingn in "cat" folder make command `make` in terminal.
+- Being in "cat" folder make command `make` in terminal.
 - Then execute s21_cat with necessary options.
 - You can list options and then files by space
 
@@ -60,9 +60,9 @@ example: `./s21_cat -n -s file_1.txt file_2.txt`
 
 ### Grep:
 
-- Beingn in "grep" folder make command `make` in terminal.
+- Being in "grep" folder make command `make` in terminal.
 - Then execute s21_grep with necessary options.
-- You can list options by space and without space and then files by space.
+- You can list options by space and combine without space and then files by space.
 
 template: `./s21_grep -<OPTION><OPTION> ... -<OPTION> <FILENAME> ... <FILENAME>`
 
