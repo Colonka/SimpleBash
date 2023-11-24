@@ -3,15 +3,16 @@
 int main(int argc, char *argv[]) {
   if (argc == 1) {
     printf(
-        "usage: grep [-abcdDEFGHhIiJLlMmnOopqRSsUVvwXxZz] [-A num] [-B num] "
-        "[-C[num]]\n\t[-e pattern] [-f file] [--binary-files=value] "
-        "[--color=when]\n\t[--context[=num]] [--directories=action] [--label] "
-        "[--line-buffered]\n\t[--null] [pattern] [file ...]\n");
+        "usage: grep [-e pattern] [-i ignor register] [-v show strings "
+        "without argv] [-c print number of finding strings]\n\t [-l print only "
+        "files with insertion] [-n numering finding strings] [-h don't print "
+        "file's name] \n\t [-f <FILENAME> pattern from file] [-s don't print "
+        "error messages] [-o print only insertions] <FILENAME> \n");
   } else {
     Node_pat *head_pat = NULL;
     Node_file *head_file = NULL;
     flags_info flags = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int flag_counter = 0;
+    int flag_counter = 0;  // quantity of parced different options
     int files_counter = 0;
     int pat_count = 0;
     if (parse_args(&argc, argv, &head_pat, &head_file, &flags, &pat_count,
@@ -19,13 +20,15 @@ int main(int argc, char *argv[]) {
       if ((flag_counter = flags.e + flags.i + flags.v + flags.c + flags.l +
                           flags.n + flags.h + flags.s + flags.f + flags.o) ==
           0) {
-        move(&head_file, &head_pat, &pat_count);
+        move(&head_file, &head_pat,
+             &pat_count);  // if no one option has parsed the first parced file
+                           // become an option
         files_counter--;
       }
       grep_func(&flags, &head_file, &head_pat, &files_counter, &flag_counter,
-                &pat_count);
+                &pat_count);  // main logic
     }
-    free_pat_file(&head_file, &head_pat);
+    free_pat_file(&head_file, &head_pat);  // free resourses
   }
   return 0;
 }
@@ -169,13 +172,15 @@ void grep_func(flags_info *flags, Node_file **head_file, Node_pat **head_pat,
   Node_file *tmp_file = *head_file;
   Node_pat *tmp_pat = *head_pat;
   Node_pat_o *head_pat_o = NULL;
-  int cmp_res = 0;
-  char file_str[4096];
-  int h_flag = 0;
-  int line_counter = 1;
-  int bingo_counter = 0;
-  int bingo_str = 0;
-  int flag_2_files = 1;
+  int cmp_res = 0;      // result of compare by regex
+  char file_str[4096];  // support variable for keep file content
+  int h_flag =
+      0;  // indicator that 'h' option was or quantity of grepping files is 1
+  int line_counter = 1;   // line's counter
+  int bingo_counter = 0;  // support variable for logic 'l', 'c', 'o' options
+  int bingo_str = 0;      // support variable for logic 'l', 'c', 'o' option
+  int flag_2_files =
+      1;  // indicator that there is 2 and more files for grepping
   if (flags->h || *files_counter < 2) {
     h_flag = 1;
   }
@@ -188,7 +193,8 @@ void grep_func(flags_info *flags, Node_file **head_file, Node_pat **head_pat,
       if (f != NULL) {
         while (!(feof(f))) {
           fgets(file_str, 4095, f);
-          for (char *i = file_str; *i != '\0'; i++) {
+          for (char *i = file_str; *i != '\0';
+               i++) {  // write content of string of grepping file
             if (*i == '\n') {
               *i = *(i + 1);
               break;
@@ -242,7 +248,7 @@ void grep_func(flags_info *flags, Node_file **head_file, Node_pat **head_pat,
         tmp_file = tmp_file->next_file;
       }
     } while (tmp_file != NULL);
-    free_pat_o(&head_pat_o);
+    if (flags->o) free_pat_o(&head_pat_o);
   }
 }
 

@@ -1,0 +1,385 @@
+\doxysection{s21\+\_\+grep.\+c File Reference}
+\hypertarget{s21__grep_8c}{}\label{s21__grep_8c}\index{s21\_grep.c@{s21\_grep.c}}
+{\ttfamily \#include \"{}s21\+\_\+grep.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{s21__grep_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{s21__grep_8c_a58023cdc0d3d14ea4d2ab54213bcc2ce}{parse\+\_\+args}} (int \texorpdfstring{$\ast$}{*}argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat, \mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+file, \mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}flags, int \texorpdfstring{$\ast$}{*}pat\+\_\+count, int \texorpdfstring{$\ast$}{*}files\+\_\+counter)
+\begin{DoxyCompactList}\small\item\em Main parcing function from input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__grep_8c_a3e570627e2d5f2d6813a2d613475ed19}{parcing}} (char \texorpdfstring{$\ast$}{*}argv, \mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags, char \texorpdfstring{$\ast$}{*}err\+\_\+flag, int \texorpdfstring{$\ast$}{*}is\+\_\+pat\+\_\+e, int \texorpdfstring{$\ast$}{*}is\+\_\+pat\+\_\+f, int \texorpdfstring{$\ast$}{*}ef\+\_\+opt, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}opt, int \texorpdfstring{$\ast$}{*}ef\+\_\+was)
+\begin{DoxyCompactList}\small\item\em Supportin function for parcing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_ad8d867d16dcd8aa155c0584852b39048}{grep\+\_\+func}} (\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}flags, \mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+file, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat, int \texorpdfstring{$\ast$}{*}files\+\_\+counter, int \texorpdfstring{$\ast$}{*}flag\+\_\+counter, int \texorpdfstring{$\ast$}{*}pat\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Main logical function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_a2113a5353ebda279a435ae8671803d35}{logic\+\_\+l}} (\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags, int \texorpdfstring{$\ast$}{*}h\+\_\+flag, int \texorpdfstring{$\ast$}{*}bingo\+\_\+counter, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, int \texorpdfstring{$\ast$}{*}bingo\+\_\+str)
+\begin{DoxyCompactList}\small\item\em Function that implement logic \textquotesingle{}l\textquotesingle{} option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_af83512f9e97f37ba34609fa308063a7c}{logic\+\_\+c}} (\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags, int \texorpdfstring{$\ast$}{*}h\+\_\+flag, int \texorpdfstring{$\ast$}{*}bingo\+\_\+counter, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, int \texorpdfstring{$\ast$}{*}line\+\_\+counter, int \texorpdfstring{$\ast$}{*}bingo\+\_\+str)
+\begin{DoxyCompactList}\small\item\em Function that implement logic \textquotesingle{}c\textquotesingle{} option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_a32da6d0d88d05267b278e8103041a50c}{init\+\_\+reg\+\_\+o}} (\mbox{\hyperlink{struct_node__pat__o}{Node\+\_\+pat\+\_\+o}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat\+\_\+o, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat, \mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags)
+\begin{DoxyCompactList}\small\item\em Function that init list of regular expression. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__grep_8c_ac30b367743ac436189bad5879f1d9a8f}{regex\+\_\+func\+\_\+o}} (char \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{struct_node__pat__o}{Node\+\_\+pat\+\_\+o}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat\+\_\+o, \mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, int \texorpdfstring{$\ast$}{*}line\+\_\+counter, int \texorpdfstring{$\ast$}{*}h\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Function implementing logic of \textquotesingle{}o\textquotesingle{} option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_acb4372dc0424bd7fb75ac4cc673bf6de}{grep\+\_\+logic}} (int \texorpdfstring{$\ast$}{*}cmp\+\_\+res, \mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}file, int \texorpdfstring{$\ast$}{*}h\+\_\+flag, int \texorpdfstring{$\ast$}{*}line\+\_\+counter, char \texorpdfstring{$\ast$}{*}str, int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flag\+\_\+counter)
+\begin{DoxyCompactList}\small\item\em Support logic function. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__grep_8c_ab130d3766abf4a400c44d7021edc18c0}{regex\+\_\+func}} (char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}pattern, \mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}flags)
+\begin{DoxyCompactList}\small\item\em Function that check string by regex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_ae993618e4f644cd86273734cf3a4282d}{free\+\_\+pat\+\_\+o}} (\mbox{\hyperlink{struct_node__pat__o}{Node\+\_\+pat\+\_\+o}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat\+\_\+o)
+\begin{DoxyCompactList}\small\item\em Function that free resources of reg\textquotesingle{}s list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_a12e2ada99fbab65c0f4269203a7bc9e1}{free\+\_\+pat\+\_\+file}} (\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+file, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat)
+\begin{DoxyCompactList}\small\item\em Fuction that free resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_abb201f0a47b08577d32670610cca611c}{move}} (\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+file, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat, int \texorpdfstring{$\ast$}{*}pat\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Function that move node from file\textquotesingle{}s list to option\textquotesingle{}s list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_abfe53142328bb920bf433f2f8a5850a9}{push\+\_\+file}} (char \texorpdfstring{$\ast$}{*}argv, \mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Function to add node at file\textquotesingle{}s list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__grep_8c_af47cd208776d632cdc547d6e5c98a8b5}{push\+\_\+pattern}} (char \texorpdfstring{$\ast$}{*}argv, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat, int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}pat\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Function to add node at option\textquotesingle{}s list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__grep_8c_a378dad5d93a44bad59e9c4fff9c730e8}{push\+\_\+pattern\+\_\+from\+\_\+file}} (char \texorpdfstring{$\ast$}{*}argv, \mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+\_\+pat, int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}pat\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Function to add node at option\textquotesingle{}s list reading options from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{s21__grep_8c_a12e2ada99fbab65c0f4269203a7bc9e1}\label{s21__grep_8c_a12e2ada99fbab65c0f4269203a7bc9e1} 
+\index{s21\_grep.c@{s21\_grep.c}!free\_pat\_file@{free\_pat\_file}}
+\index{free\_pat\_file@{free\_pat\_file}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{free\_pat\_file()}{free\_pat\_file()}}
+{\footnotesize\ttfamily void free\+\_\+pat\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+file,  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat }\end{DoxyParamCaption})}
+
+
+
+Fuction that free resources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+\_\+file} & pointer to file\textquotesingle{}s list \\
+\hline
+{\em head\+\_\+pat} & pointer to options\textquotesingle{}s list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_ae993618e4f644cd86273734cf3a4282d}\label{s21__grep_8c_ae993618e4f644cd86273734cf3a4282d} 
+\index{s21\_grep.c@{s21\_grep.c}!free\_pat\_o@{free\_pat\_o}}
+\index{free\_pat\_o@{free\_pat\_o}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{free\_pat\_o()}{free\_pat\_o()}}
+{\footnotesize\ttfamily void free\+\_\+pat\+\_\+o (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node__pat__o}{Node\+\_\+pat\+\_\+o}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat\+\_\+o }\end{DoxyParamCaption})}
+
+
+
+Function that free resources of reg\textquotesingle{}s list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+\_\+pat\+\_\+o} & pointer to list of regular expression \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_ad8d867d16dcd8aa155c0584852b39048}\label{s21__grep_8c_ad8d867d16dcd8aa155c0584852b39048} 
+\index{s21\_grep.c@{s21\_grep.c}!grep\_func@{grep\_func}}
+\index{grep\_func@{grep\_func}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{grep\_func()}{grep\_func()}}
+{\footnotesize\ttfamily void grep\+\_\+func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{flags,  }\item[{\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+file,  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat,  }\item[{int \texorpdfstring{$\ast$}{*}}]{files\+\_\+counter,  }\item[{int \texorpdfstring{$\ast$}{*}}]{flag\+\_\+counter,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pat\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Main logical function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em head\+\_\+file} & pointer to file\textquotesingle{}s list \\
+\hline
+{\em head\+\_\+pat} & pointer to options\textquotesingle{}s list \\
+\hline
+{\em files\+\_\+counter} & files counter \\
+\hline
+{\em flag\+\_\+counter} & quantity of parced different options \\
+\hline
+{\em pat\+\_\+count} & pointer to options counter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_acb4372dc0424bd7fb75ac4cc673bf6de}\label{s21__grep_8c_acb4372dc0424bd7fb75ac4cc673bf6de} 
+\index{s21\_grep.c@{s21\_grep.c}!grep\_logic@{grep\_logic}}
+\index{grep\_logic@{grep\_logic}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{grep\_logic()}{grep\_logic()}}
+{\footnotesize\ttfamily void grep\+\_\+logic (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{cmp\+\_\+res,  }\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h\+\_\+flag,  }\item[{int \texorpdfstring{$\ast$}{*}}]{line\+\_\+counter,  }\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flag\+\_\+counter }\end{DoxyParamCaption})}
+
+
+
+Support logic function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmp\+\_\+res} & result of compare by regex \\
+\hline
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em file} & pointer to grepping filename \\
+\hline
+{\em h\+\_\+flag} & indicator that \textquotesingle{}h\textquotesingle{} option was or quantity of grepping files is 1 \\
+\hline
+{\em line\+\_\+counter} & line\textquotesingle{}s counter \\
+\hline
+{\em str} & pointer to grepping string of file \\
+\hline
+{\em flag\+\_\+counter} & pointer to quantity of parced different options \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_a32da6d0d88d05267b278e8103041a50c}\label{s21__grep_8c_a32da6d0d88d05267b278e8103041a50c} 
+\index{s21\_grep.c@{s21\_grep.c}!init\_reg\_o@{init\_reg\_o}}
+\index{init\_reg\_o@{init\_reg\_o}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{init\_reg\_o()}{init\_reg\_o()}}
+{\footnotesize\ttfamily void init\+\_\+reg\+\_\+o (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node__pat__o}{Node\+\_\+pat\+\_\+o}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat\+\_\+o,  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat,  }\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags }\end{DoxyParamCaption})}
+
+
+
+Function that init list of regular expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+\_\+pat\+\_\+o} & pointer to list of regular expression \\
+\hline
+{\em head\+\_\+pat} & pointer to option\textquotesingle{}s list \\
+\hline
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_af83512f9e97f37ba34609fa308063a7c}\label{s21__grep_8c_af83512f9e97f37ba34609fa308063a7c} 
+\index{s21\_grep.c@{s21\_grep.c}!logic\_c@{logic\_c}}
+\index{logic\_c@{logic\_c}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{logic\_c()}{logic\_c()}}
+{\footnotesize\ttfamily void logic\+\_\+c (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h\+\_\+flag,  }\item[{int \texorpdfstring{$\ast$}{*}}]{bingo\+\_\+counter,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{int \texorpdfstring{$\ast$}{*}}]{line\+\_\+counter,  }\item[{int \texorpdfstring{$\ast$}{*}}]{bingo\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+Function that implement logic \textquotesingle{}c\textquotesingle{} option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em h\+\_\+flag} & indicator that \textquotesingle{}h\textquotesingle{} option was or quantity of grepping files is 1 \\
+\hline
+{\em bingo\+\_\+counter} & pointer to support variable for logic \textquotesingle{}l\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}o\textquotesingle{} options \\
+\hline
+{\em file} & pointer to grepping filename \\
+\hline
+{\em line\+\_\+counter} & line\textquotesingle{}s counter \\
+\hline
+{\em bingo\+\_\+str} & pointer to support variable for logic \textquotesingle{}l\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}o\textquotesingle{} option \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_a2113a5353ebda279a435ae8671803d35}\label{s21__grep_8c_a2113a5353ebda279a435ae8671803d35} 
+\index{s21\_grep.c@{s21\_grep.c}!logic\_l@{logic\_l}}
+\index{logic\_l@{logic\_l}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{logic\_l()}{logic\_l()}}
+{\footnotesize\ttfamily void logic\+\_\+l (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h\+\_\+flag,  }\item[{int \texorpdfstring{$\ast$}{*}}]{bingo\+\_\+counter,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{int \texorpdfstring{$\ast$}{*}}]{bingo\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+Function that implement logic \textquotesingle{}l\textquotesingle{} option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em h\+\_\+flag} & indicator that \textquotesingle{}h\textquotesingle{} option was or quantity of grepping files is 1 \\
+\hline
+{\em bingo\+\_\+counter} & pointer to support variable for logic \textquotesingle{}l\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}o\textquotesingle{} options \\
+\hline
+{\em bingo\+\_\+str} & pointer to support variable for logic \textquotesingle{}l\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}o\textquotesingle{} option \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{s21__grep_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{s21\_grep.c@{s21\_grep.c}!main@{main}}
+\index{main@{main}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{s21__grep_8c_abb201f0a47b08577d32670610cca611c}\label{s21__grep_8c_abb201f0a47b08577d32670610cca611c} 
+\index{s21\_grep.c@{s21\_grep.c}!move@{move}}
+\index{move@{move}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+file,  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pat\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Function that move node from file\textquotesingle{}s list to option\textquotesingle{}s list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+\_\+file} & pointer to file\textquotesingle{}s list \\
+\hline
+{\em head\+\_\+pat} & pointer to options\textquotesingle{}s list \\
+\hline
+{\em pat\+\_\+count} & pointer to options counter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_a3e570627e2d5f2d6813a2d613475ed19}\label{s21__grep_8c_a3e570627e2d5f2d6813a2d613475ed19} 
+\index{s21\_grep.c@{s21\_grep.c}!parcing@{parcing}}
+\index{parcing@{parcing}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{parcing()}{parcing()}}
+{\footnotesize\ttfamily int parcing (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{argv,  }\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags,  }\item[{char \texorpdfstring{$\ast$}{*}}]{err\+\_\+flag,  }\item[{int \texorpdfstring{$\ast$}{*}}]{is\+\_\+pat\+\_\+e,  }\item[{int \texorpdfstring{$\ast$}{*}}]{is\+\_\+pat\+\_\+f,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ef\+\_\+opt,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{opt,  }\item[{int \texorpdfstring{$\ast$}{*}}]{ef\+\_\+was }\end{DoxyParamCaption})}
+
+
+
+Supportin function for parcing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & pointer to agrument \\
+\hline
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em err\+\_\+flag} & error flag \\
+\hline
+{\em is\+\_\+pat\+\_\+e} & indicator that optione \textquotesingle{}e\textquotesingle{} was before \\
+\hline
+{\em is\+\_\+pat\+\_\+f} & indicator that optione \textquotesingle{}f\textquotesingle{} was before \\
+\hline
+{\em ef\+\_\+opt} & indicator that optione \textquotesingle{}e\textquotesingle{} and \textquotesingle{}f\textquotesingle{} wasn\textquotesingle{}t before \\
+\hline
+{\em opt} & pointer to arument \\
+\hline
+{\em ef\+\_\+was} & indicator that optione \textquotesingle{}e\textquotesingle{} and \textquotesingle{}f\textquotesingle{} was before \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error code 1 -\/ ok, 0 -\/ error 
+\end{DoxyReturn}
+\Hypertarget{s21__grep_8c_a58023cdc0d3d14ea4d2ab54213bcc2ce}\label{s21__grep_8c_a58023cdc0d3d14ea4d2ab54213bcc2ce} 
+\index{s21\_grep.c@{s21\_grep.c}!parse\_args@{parse\_args}}
+\index{parse\_args@{parse\_args}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{parse\_args()}{parse\_args()}}
+{\footnotesize\ttfamily int parse\+\_\+args (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat,  }\item[{\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+file,  }\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{flags,  }\item[{int \texorpdfstring{$\ast$}{*}}]{pat\+\_\+count,  }\item[{int \texorpdfstring{$\ast$}{*}}]{files\+\_\+counter }\end{DoxyParamCaption})}
+
+
+
+Main parcing function from input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & quantity of arguments \\
+\hline
+{\em argv} & pointer to arguments \\
+\hline
+{\em head\+\_\+pat} & pointer to option\textquotesingle{}s list \\
+\hline
+{\em head\+\_\+file} & pointer to file\textquotesingle{}s list \\
+\hline
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em pat\+\_\+count} & options counter \\
+\hline
+{\em files\+\_\+counter} & files counter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error code 1 -\/ok , 0 -\/ error 
+\end{DoxyReturn}
+\Hypertarget{s21__grep_8c_abfe53142328bb920bf433f2f8a5850a9}\label{s21__grep_8c_abfe53142328bb920bf433f2f8a5850a9} 
+\index{s21\_grep.c@{s21\_grep.c}!push\_file@{push\_file}}
+\index{push\_file@{push\_file}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{push\_file()}{push\_file()}}
+{\footnotesize\ttfamily void push\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{argv,  }\item[{\mbox{\hyperlink{struct_node__file}{Node\+\_\+file}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Function to add node at file\textquotesingle{}s list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & pointer to agrument \\
+\hline
+{\em head\+\_\+file} & pointer to file\textquotesingle{}s list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_af47cd208776d632cdc547d6e5c98a8b5}\label{s21__grep_8c_af47cd208776d632cdc547d6e5c98a8b5} 
+\index{s21\_grep.c@{s21\_grep.c}!push\_pattern@{push\_pattern}}
+\index{push\_pattern@{push\_pattern}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{push\_pattern()}{push\_pattern()}}
+{\footnotesize\ttfamily void push\+\_\+pattern (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{argv,  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat,  }\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{pat\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Function to add node at option\textquotesingle{}s list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & pointer to agrument \\
+\hline
+{\em head\+\_\+pat} & pointer to option\textquotesingle{}s list \\
+\hline
+{\em pat\+\_\+count} & options counter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__grep_8c_a378dad5d93a44bad59e9c4fff9c730e8}\label{s21__grep_8c_a378dad5d93a44bad59e9c4fff9c730e8} 
+\index{s21\_grep.c@{s21\_grep.c}!push\_pattern\_from\_file@{push\_pattern\_from\_file}}
+\index{push\_pattern\_from\_file@{push\_pattern\_from\_file}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{push\_pattern\_from\_file()}{push\_pattern\_from\_file()}}
+{\footnotesize\ttfamily int push\+\_\+pattern\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{argv,  }\item[{\mbox{\hyperlink{struct_node__pat}{Node\+\_\+pat}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat,  }\item[{int \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{pat\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Function to add node at option\textquotesingle{}s list reading options from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & pointer to agrument \\
+\hline
+{\em head\+\_\+pat} & pointer to option\textquotesingle{}s list \\
+\hline
+{\em pat\+\_\+count} & options counter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error code 1 -\/ ok, 0 -\/ file not found 
+\end{DoxyReturn}
+\Hypertarget{s21__grep_8c_ab130d3766abf4a400c44d7021edc18c0}\label{s21__grep_8c_ab130d3766abf4a400c44d7021edc18c0} 
+\index{s21\_grep.c@{s21\_grep.c}!regex\_func@{regex\_func}}
+\index{regex\_func@{regex\_func}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{regex\_func()}{regex\_func()}}
+{\footnotesize\ttfamily int regex\+\_\+func (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{pattern,  }\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags }\end{DoxyParamCaption})}
+
+
+
+Function that check string by regex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to checking string \\
+\hline
+{\em pattern} & pointer to options \\
+\hline
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+count of succesful comparing 
+\end{DoxyReturn}
+\Hypertarget{s21__grep_8c_ac30b367743ac436189bad5879f1d9a8f}\label{s21__grep_8c_ac30b367743ac436189bad5879f1d9a8f} 
+\index{s21\_grep.c@{s21\_grep.c}!regex\_func\_o@{regex\_func\_o}}
+\index{regex\_func\_o@{regex\_func\_o}!s21\_grep.c@{s21\_grep.c}}
+\doxysubsubsection{\texorpdfstring{regex\_func\_o()}{regex\_func\_o()}}
+{\footnotesize\ttfamily int regex\+\_\+func\+\_\+o (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{struct_node__pat__o}{Node\+\_\+pat\+\_\+o}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+\_\+pat\+\_\+o,  }\item[{\mbox{\hyperlink{structflags__info}{flags\+\_\+info}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{flags,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{file,  }\item[{int \texorpdfstring{$\ast$}{*}}]{line\+\_\+counter,  }\item[{int \texorpdfstring{$\ast$}{*}}]{h\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+Function implementing logic of \textquotesingle{}o\textquotesingle{} option. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+{\em head\+\_\+pat\+\_\+o} & pointer to list of regular expression \\
+\hline
+{\em flags} & pointer to struct with option\textquotesingle{}s info \\
+\hline
+{\em file} & pointer to grepping filename \\
+\hline
+{\em line\+\_\+counter} & line\textquotesingle{}s counter \\
+\hline
+{\em h\+\_\+flag} & indicator that \textquotesingle{}h\textquotesingle{} option was or quantity of grepping files is 1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+count of succesful comparing 
+\end{DoxyReturn}

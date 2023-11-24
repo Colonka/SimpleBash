@@ -2,6 +2,9 @@
 
 Development of Bash text utilities: cat, grep.
 
+P.s. This is my one of the the first project so there is many things is not ideal...
+And I've decided not improve this code for more indicative track of my code improvement!
+
 ## Description
 In this project I've developed basic Bash utilities for working with C programming language texts. 
 These utilities (cat and grep) are often used in the Linux terminal. 
@@ -67,3 +70,7 @@ example: `./s21_cat -n -s file_1.txt file_2.txt`
 template: `./s21_grep -<OPTION><OPTION> ... -<OPTION> <FILENAME> ... <FILENAME>`
 
 example: `./s21_grep -iv -h file_1.txt file_2.txt`
+
+## Insructions for documentation
+
+To get documentation make command `make docs` in terminal being in `cat` or `grep` folder

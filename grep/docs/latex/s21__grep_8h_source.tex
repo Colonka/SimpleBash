@@ -1,0 +1,81 @@
+\doxysection{s21\+\_\+grep.\+h}
+\hypertarget{s21__grep_8h_source}{}\label{s21__grep_8h_source}\mbox{\hyperlink{s21__grep_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <regex.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ GREP\_S21\_GREP\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ GREP\_S21\_GREP\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00009\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_a5b343f5085a2b81ceea875c13670171f}{e}};\ \ \textcolor{comment}{//\ pattern}}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_a8efbfab22d46fe30cd05e907ec2a25db}{i}};\ \ \textcolor{comment}{//\ ignor\ register}}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_ad6f889b3d3495b732f5d0c2163dcb813}{v}};\ \ \textcolor{comment}{//\ show\ strings\ without\ argv}}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_ab069bb84f8fbdbc9111361386b6fe6b2}{c}};\ \ \textcolor{comment}{//\ print\ number\ of\ finding\ strings}}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_a030691361c6a2f8ecb6e056a11e56a2d}{l}};\ \ \textcolor{comment}{//\ print\ only\ files\ with\ insertion}}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_a40d6f4b274a5b03100b514ac3b61d5bb}{n}};\ \ \textcolor{comment}{//\ numering\ finding\ strings}}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_af14cff1aaad5210faf58155ab98f20dc}{h}};\ \ \textcolor{comment}{//\ don't\ print\ file's\ name}}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_a6228b05a6afed701f9f91a4f05c42650}{s}};\ \ \textcolor{comment}{//\ don't\ print\ error\ messages}}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_a4d8629025842e03f1b20092406c06a51}{f}};\ \ \textcolor{comment}{//\ pattern\ from\ file}}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structflags__info_aa6e62f80b0037322f817964b32275e9c}{o}};\ \ \textcolor{comment}{//\ print\ only\ insertions}}
+\DoxyCodeLine{00019\ \}\ \mbox{\hyperlink{structflags__info}{flags\_info}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_node__pat_a2bb1c570d8ed3b8730142fb9b2de29ac}{pat}};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_node__pat_ad3a4510186307188c7bbc5606a48cc07}{pat\_file}};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ *\mbox{\hyperlink{struct_node__pat_a961a05186ec44d19ae3f606366d0c387}{next\_pat}};}
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node__file}{Node\_file}}\ \{}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_node__file_ae19de24e69ae9f01cfe9829c9cb09844}{file}};}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node__file}{Node\_file}}\ *\mbox{\hyperlink{struct_node__file_aa58ded085293eea3f834cfc6933ff4c7}{next\_file}};}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{struct_node__file}{Node\_file}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node__pat__o}{Node\_pat\_o}}\ \{}
+\DoxyCodeLine{00049\ \ \ regex\_t\ \mbox{\hyperlink{struct_node__pat__o_a73296ca780d544ceae2ff6d9b1c1696f}{reg}};}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node__pat__o}{Node\_pat\_o}}\ *\mbox{\hyperlink{struct_node__pat__o_adc5142faf19074eb9be7946fda81d990}{next\_pat\_o}};}
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{struct_node__pat__o}{Node\_pat\_o}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__grep_8h_a58023cdc0d3d14ea4d2ab54213bcc2ce}{parse\_args}}(\textcolor{keywordtype}{int}\ *argc,\ \textcolor{keywordtype}{char}\ *argv[],\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ **head\_pat,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node__file}{Node\_file}}\ **head\_file,\ \mbox{\hyperlink{structflags__info}{flags\_info}}\ *flags,\ \textcolor{keywordtype}{int}\ *pat\_count,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *files\_counter);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_abfe53142328bb920bf433f2f8a5850a9}{push\_file}}(\textcolor{keywordtype}{char}\ *argv,\ \mbox{\hyperlink{struct_node__file}{Node\_file}}\ ***head\_file);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_af47cd208776d632cdc547d6e5c98a8b5}{push\_pattern}}(\textcolor{keywordtype}{char}\ *argv,\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ ***head\_pat,\ \textcolor{keywordtype}{int}\ **pat\_count);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__grep_8h_a378dad5d93a44bad59e9c4fff9c730e8}{push\_pattern\_from\_file}}(\textcolor{keywordtype}{char}\ *argv,\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ ***head\_pat,\ \textcolor{keywordtype}{int}\ **pat\_count);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__grep_8h_a3e570627e2d5f2d6813a2d613475ed19}{parcing}}(\textcolor{keywordtype}{char}\ *argv,\ \mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags,\ \textcolor{keywordtype}{char}\ *err\_flag,\ \textcolor{keywordtype}{int}\ *is\_pat\_e,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *is\_pat\_f,\ \textcolor{keywordtype}{int}\ *ef\_opt,\ \textcolor{keywordtype}{char}\ **opt,\ \textcolor{keywordtype}{int}\ *ef\_was);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_abb201f0a47b08577d32670610cca611c}{move}}(\mbox{\hyperlink{struct_node__file}{Node\_file}}\ **head\_file,\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ **head\_pat,\ \textcolor{keywordtype}{int}\ *pat\_count);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_ad8d867d16dcd8aa155c0584852b39048}{grep\_func}}(\mbox{\hyperlink{structflags__info}{flags\_info}}\ *flags,\ \mbox{\hyperlink{struct_node__file}{Node\_file}}\ **head\_file,\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ **head\_pat,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *files\_counter,\ \textcolor{keywordtype}{int}\ *flag\_counter,\ \textcolor{keywordtype}{int}\ *pat\_count);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_acb4372dc0424bd7fb75ac4cc673bf6de}{grep\_logic}}(\textcolor{keywordtype}{int}\ *cmp\_res,\ \mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags,\ \textcolor{keywordtype}{char}\ **file,\ \textcolor{keywordtype}{int}\ *h\_flag,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *line\_counter,\ \textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{int}\ **flag\_counter);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00150\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_a2113a5353ebda279a435ae8671803d35}{logic\_l}}(\mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags,\ \textcolor{keywordtype}{int}\ *h\_flag,\ \textcolor{keywordtype}{int}\ *bingo\_counter,\ \textcolor{keywordtype}{char}\ **file,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *bingo\_str);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_af83512f9e97f37ba34609fa308063a7c}{logic\_c}}(\mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags,\ \textcolor{keywordtype}{int}\ *h\_flag,\ \textcolor{keywordtype}{int}\ *bingo\_counter,\ \textcolor{keywordtype}{char}\ **file,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *line\_counter,\ \textcolor{keywordtype}{int}\ *bingo\_str);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00174\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__grep_8h_ab130d3766abf4a400c44d7021edc18c0}{regex\_func}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{char}\ **pattern,\ \mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00187\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__grep_8h_ac30b367743ac436189bad5879f1d9a8f}{regex\_func\_o}}(\textcolor{keywordtype}{char}\ *str,\ \mbox{\hyperlink{struct_node__pat__o}{Node\_pat\_o}}\ **head\_pat\_o,\ \mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags,}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **file,\ \textcolor{keywordtype}{int}\ *line\_counter,\ \textcolor{keywordtype}{int}\ *h\_flag);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_a32da6d0d88d05267b278e8103041a50c}{init\_reg\_o}}(\mbox{\hyperlink{struct_node__pat__o}{Node\_pat\_o}}\ **head\_pat\_o,\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ ***head\_pat,}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structflags__info}{flags\_info}}\ **flags);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_a12e2ada99fbab65c0f4269203a7bc9e1}{free\_pat\_file}}(\mbox{\hyperlink{struct_node__file}{Node\_file}}\ **head\_file,\ \mbox{\hyperlink{struct_node__pat}{Node\_pat}}\ **head\_pat);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__grep_8h_ae993618e4f644cd86273734cf3a4282d}{free\_pat\_o}}(\mbox{\hyperlink{struct_node__pat__o}{Node\_pat\_o}}\ **head\_pat\_o);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ GREP\_S21\_GREP\_H}}
+
+\end{DoxyCode}

@@ -7,23 +7,24 @@ s21_grep : ./s21_grep.o
 	$(CC) ./s21_grep.o -o ./s21_grep
 s21_grep.o: ./s21_grep.h ./s21_grep.c
 	$(CC) -c $(CFLAGS) ./s21_grep.c
-	
-check: clang
 
-cppcheck :
-	cppcheck --enable=all --suppress=missingIncludeSystem .
+test:
+	sh test_grep.sh
 
-clang:
-	cp ../../materials/linters/.clang-format .clang-format
-	clang-format -n s21_grep.c
-	rm .clang-format
-
-git :
-	git add Makefile 
-	git add ./*.c *.h
+git:
+	git add -A
 	git commit -m "$m"
 	git push origin "$b"
-	
+
+dvi: 
+	mkdir -p docs
+	doxygen Doxyfile
+	mv html latex docs
+	open docs/html/index.html
+
+docs:
+	open docs/html/index.html
+
 clean:
 	rm -rf ./*.o
 	rm -rf ./s21_grep

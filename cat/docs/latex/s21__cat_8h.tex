@@ -1,0 +1,140 @@
+\doxysection{s21\+\_\+cat.\+h File Reference}
+\hypertarget{s21__cat_8h}{}\label{s21__cat_8h}\index{s21\_cat.h@{s21\_cat.h}}
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structflag__info}{flag\+\_\+info}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{s21__cat_8h_a0f5c133746575d31f70128014481fff0}{cat\+\_\+no\+\_\+flag}} (char \texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Function that simply print content of files in console without transformation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__cat_8h_a61424d39f27408ac17c51707f910251d}{cat\+\_\+args}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function that make main transmormations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__cat_8h_a9169724c84953971c195a0cac589deb7}{cat\+\_\+parse\+\_\+args}} (char \texorpdfstring{$\ast$}{*}argv, \mbox{\hyperlink{structflag__info}{flag\+\_\+info}} \texorpdfstring{$\ast$}{*}flags, char \texorpdfstring{$\ast$}{*}err\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Function that parse argments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__cat_8h_ace669c2d2fa8f469f424a1791f58b552}{cat\+\_\+print}} (\mbox{\hyperlink{structflag__info}{flag\+\_\+info}} \texorpdfstring{$\ast$}{*}flags, char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Function that print content of files in console with tansformations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__cat_8h_a00205b4a67a02aa358ebd5abc6c77235}{use\+\_\+flag}} (char \texorpdfstring{$\ast$}{*}c, const char cprev, \mbox{\hyperlink{structflag__info}{flag\+\_\+info}} \texorpdfstring{$\ast$}{*}flags, int \texorpdfstring{$\ast$}{*}count, int \texorpdfstring{$\ast$}{*}s\+\_\+be, int q)
+\begin{DoxyCompactList}\small\item\em Function that implements logic of printing content of files in console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{s21__cat_8h_a9dbe23b2ce2b91a78d2e37803ece9d5e}{no\+\_\+print\+\_\+symbols}} (int c)
+\begin{DoxyCompactList}\small\item\em Function that print noprint symbols in console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{s21__cat_8h_a61424d39f27408ac17c51707f910251d}\label{s21__cat_8h_a61424d39f27408ac17c51707f910251d} 
+\index{s21\_cat.h@{s21\_cat.h}!cat\_args@{cat\_args}}
+\index{cat\_args@{cat\_args}!s21\_cat.h@{s21\_cat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_args()}{cat\_args()}}
+{\footnotesize\ttfamily void cat\+\_\+args (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Function that make main transmormations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & quantity of argument \\
+\hline
+{\em argv} & pointer to array of strings that content arguments \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__cat_8h_a0f5c133746575d31f70128014481fff0}\label{s21__cat_8h_a0f5c133746575d31f70128014481fff0} 
+\index{s21\_cat.h@{s21\_cat.h}!cat\_no\_flag@{cat\_no\_flag}}
+\index{cat\_no\_flag@{cat\_no\_flag}!s21\_cat.h@{s21\_cat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_no\_flag()}{cat\_no\_flag()}}
+{\footnotesize\ttfamily void cat\+\_\+no\+\_\+flag (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{argv }\end{DoxyParamCaption})}
+
+
+
+Function that simply print content of files in console without transformation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & pointer to string file name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__cat_8h_a9169724c84953971c195a0cac589deb7}\label{s21__cat_8h_a9169724c84953971c195a0cac589deb7} 
+\index{s21\_cat.h@{s21\_cat.h}!cat\_parse\_args@{cat\_parse\_args}}
+\index{cat\_parse\_args@{cat\_parse\_args}!s21\_cat.h@{s21\_cat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_parse\_args()}{cat\_parse\_args()}}
+{\footnotesize\ttfamily int cat\+\_\+parse\+\_\+args (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{argv,  }\item[{\mbox{\hyperlink{structflag__info}{flag\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{flags,  }\item[{char \texorpdfstring{$\ast$}{*}}]{err\+\_\+flag }\end{DoxyParamCaption})}
+
+
+
+Function that parse argments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv} & pointer to string that content option \\
+\hline
+{\em flags} & ponter to struct that content info about options \\
+\hline
+{\em err\+\_\+flag} & pointer to error indicator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error\textquotesingle{}s code\+: 1 -\/ ok, 0 -\/ error 
+\end{DoxyReturn}
+\Hypertarget{s21__cat_8h_ace669c2d2fa8f469f424a1791f58b552}\label{s21__cat_8h_ace669c2d2fa8f469f424a1791f58b552} 
+\index{s21\_cat.h@{s21\_cat.h}!cat\_print@{cat\_print}}
+\index{cat\_print@{cat\_print}!s21\_cat.h@{s21\_cat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_print()}{cat\_print()}}
+{\footnotesize\ttfamily void cat\+\_\+print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structflag__info}{flag\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{flags,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+
+
+Function that print content of files in console with tansformations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & ponter to struct that content info about options \\
+\hline
+{\em filename} & pointer to string that content file\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__cat_8h_a9dbe23b2ce2b91a78d2e37803ece9d5e}\label{s21__cat_8h_a9dbe23b2ce2b91a78d2e37803ece9d5e} 
+\index{s21\_cat.h@{s21\_cat.h}!no\_print\_symbols@{no\_print\_symbols}}
+\index{no\_print\_symbols@{no\_print\_symbols}!s21\_cat.h@{s21\_cat.h}}
+\doxysubsubsection{\texorpdfstring{no\_print\_symbols()}{no\_print\_symbols()}}
+{\footnotesize\ttfamily void no\+\_\+print\+\_\+symbols (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Function that print noprint symbols in console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & pointer to symbol in string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{s21__cat_8h_a00205b4a67a02aa358ebd5abc6c77235}\label{s21__cat_8h_a00205b4a67a02aa358ebd5abc6c77235} 
+\index{s21\_cat.h@{s21\_cat.h}!use\_flag@{use\_flag}}
+\index{use\_flag@{use\_flag}!s21\_cat.h@{s21\_cat.h}}
+\doxysubsubsection{\texorpdfstring{use\_flag()}{use\_flag()}}
+{\footnotesize\ttfamily void use\+\_\+flag (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{c,  }\item[{const char}]{cprev,  }\item[{\mbox{\hyperlink{structflag__info}{flag\+\_\+info}} \texorpdfstring{$\ast$}{*}}]{flags,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count,  }\item[{int \texorpdfstring{$\ast$}{*}}]{s\+\_\+be,  }\item[{int}]{q }\end{DoxyParamCaption})}
+
+
+
+Function that implements logic of printing content of files in console. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & pointer to symbol in string \\
+\hline
+{\em cprev} & pointer to symbol before \"{}c\"{} in string \\
+\hline
+{\em flags} & ponter to struct that content info about options \\
+\hline
+{\em count} & pointer to quantity of printing symbols \\
+\hline
+{\em s\+\_\+be} & pointer to indicator of \"{}s\"{} option \\
+\hline
+{\em q} & first call function indicator \\
+\hline
+\end{DoxyParams}
