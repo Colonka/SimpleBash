@@ -10,6 +10,10 @@ In this project I've developed basic Bash utilities for working with C programmi
 These utilities (cat and grep) are often used in the Linux terminal. 
 In addition I've made bash scripts for testing.
 
+## Insructions for documentation
+
+To get documentation make command `make dvi` in terminal being in `cat` or `grep` folder
+
 ### cat Usage
 
 Cat is one of the most frequently used commands on Unix-like operating systems. It has three related functions with regard to text files: displaying them, combining copies of them and creating new ones.
@@ -70,7 +74,3 @@ example: `./s21_cat -n -s file_1.txt file_2.txt`
 template: `./s21_grep -<OPTION><OPTION> ... -<OPTION> <FILENAME> ... <FILENAME>`
 
 example: `./s21_grep -iv -h file_1.txt file_2.txt`
-
-## Insructions for documentation
-
-To get documentation make command `make docs` in terminal being in `cat` or `grep` folder

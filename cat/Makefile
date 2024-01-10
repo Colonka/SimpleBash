@@ -24,8 +24,7 @@ docs:
 	open docs/html/index.html
 	
 clean:
-	rm -rf ./*.o
-	rm -rf ./s21_cat
+	rm -rf ./*.o ./s21_cat docs
 	
 rebuild:
 	@$(MAKE) clean
